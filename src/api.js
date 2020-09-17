@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/payment/create", async (req, res) => {
+router.post("/payment/create", async (req, res) => {
   const total = req.query.total;
   console.log("backend recieve Amount:", total);
   const paymentIntent = await stripe.paymentIntents.create({
